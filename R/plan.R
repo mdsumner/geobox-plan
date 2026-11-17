@@ -2,10 +2,13 @@
 #
 # The plan is a data frame. Every row says: to fill this target chunk, for
 # this group (time step), read this window of this asset, with this engine.
-# Building it reads no pixels. Executing it is a loop over rows.
+# Building it reads no pixels (at most a file header, when an item carries no
+# proj:* metadata). Executing it is a loop over rows.
 #
-# Dependencies: gdalraster (transforms, warp, reads), jsonlite.
+# Dependencies: gdalraster (transforms, warp, reads, VSIFile), jsonlite.
 # Grid arithmetic is written out here; in a package it is vaster's.
+#
+# Inside execution nodata is NA, whatever the source's nodata value is.
 
 # ---- target grid ------------------------------------------------------------
 
@@ -35,24 +38,65 @@ chunk_gt <- function(gbox, xoff, yoff) {
 
 # ---- population -------------------------------------------------------------
 
-#' One row per (item, asset) from STAC items carrying proj:*. Accepts
-#' proj:epsg or proj:code. The longitude centre is antimeridian-aware.
-population <- function(features, asset = "red") {
+# Centre longitude as a circular mean of the footprint's vertices, so a
+# granule at the antimeridian centres near 180, not near 0. A bbox that
+# claims [-180, 180] for such a granule would otherwise put it at 0 and
+# shift its solar day.
+lon_centre <- function(f) {
+  lon <- NULL
+  if (!is.null(f$geometry)) lon <- unlist(f$geometry$coordinates)   # x, y, x, y, ...
+  if (!is.null(lon) && length(lon) >= 2) {
+    lon <- lon[seq(1, length(lon), by = 2)]
+  } else {
+    bb <- unlist(f$bbox); lon <- c(bb[1], bb[3])
+  }
+  r <- lon * pi / 180
+  atan2(mean(sin(r)), mean(cos(r))) * 180 / pi
+}
+
+# Grid and encoding from the file header: used when an item has no proj:*.
+# Costs one header read per asset.
+header_grid <- function(href) {
+  ds <- new(gdalraster::GDALRaster, href); on.exit(ds$close())
+  ims <- ds$getMetadata(0, "IMAGE_STRUCTURE")
+  val <- function(k) { x <- sub(paste0("^", k, "="), "", grep(paste0("^", k, "="), ims, value = TRUE)); if (length(x)) x else NA_character_ }
+  list(crs = ds$getProjection(), gt = ds$getGeoTransform(),
+       ncol = ds$getRasterXSize(), nrow = ds$getRasterYSize(),
+       nodata = ds$getNoDataValue(1), dtype = ds$getDataTypeName(1),
+       block = ds$getBlockSize(1), compression = val("COMPRESSION"), predictor = val("PREDICTOR"))
+}
+
+#' One row per (item, asset) from STAC items. Grid from proj:* (item or asset
+#' level, proj:epsg or proj:code) when present, else from the file header.
+#' Encoding (dtype, block size, compression) always from the header when
+#' header = TRUE, since the byte engine needs it.
+population <- function(features, asset = "red", header = TRUE, href_fn = identity) {
   rows <- lapply(features, function(f) {
     p <- f$properties; a <- f$assets[[asset]]
-    crs <- if (!is.null(p[["proj:code"]])) p[["proj:code"]] else paste0("EPSG:", p[["proj:epsg"]])
-    tr <- unlist(p[["proj:transform"]])          # affine order a,b,c,d,e,f
-    gt <- c(tr[3], tr[1], tr[2], tr[6], tr[4], tr[5])
-    bb <- unlist(f$bbox)
-    xmax <- if (bb[3] < bb[1]) bb[3] + 360 else bb[3]
-    lon <- (bb[1] + xmax) / 2; lon <- ((lon + 180) %% 360) - 180
+    href <- href_fn(a$href)
+    pget <- function(k) if (!is.null(a[[k]])) a[[k]] else p[[k]]
+    crs <- if (!is.null(pget("proj:code"))) pget("proj:code") else if (!is.null(pget("proj:epsg"))) paste0("EPSG:", pget("proj:epsg")) else NA
+    tr <- unlist(pget("proj:transform")); shp <- unlist(pget("proj:shape"))
+    h <- if (header || is.na(crs) || is.null(tr) || is.null(shp)) header_grid(href) else NULL
+    if (!is.null(tr) && !is.null(shp) && !is.na(crs)) {
+      gt <- c(tr[3], tr[1], tr[2], tr[6], tr[4], tr[5]); ncol <- shp[2]; nrow <- shp[1]
+      grid_from <- "proj"
+    } else {
+      crs <- h$crs; gt <- h$gt; ncol <- h$ncol; nrow <- h$nrow; grid_from <- "header"
+    }
     nd <- a[["raster:bands"]][[1]]$nodata
-    data.frame(item = f$id, datetime = as.POSIXct(p$datetime, "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC"),
-               asset = asset, href = a$href, src_crs = crs,
+    if (is.null(nd) && !is.null(h)) nd <- h$nodata
+    data.frame(item = f$id, datetime = as.POSIXct(sub("Z$", "", p$datetime), "%Y-%m-%dT%H:%M:%OS", tz = "UTC"),
+               asset = asset, href = href, src_crs = crs, grid_from = grid_from,
                sgt1 = gt[1], sgt2 = gt[2], sgt3 = gt[3], sgt4 = gt[4], sgt5 = gt[5], sgt6 = gt[6],
-               src_ncol = as.integer(unlist(p[["proj:shape"]])[2]),
-               src_nrow = as.integer(unlist(p[["proj:shape"]])[1]),
-               nodata = if (is.null(nd)) NA_real_ else nd, lon_centre = lon)
+               src_ncol = as.integer(ncol), src_nrow = as.integer(nrow),
+               nodata = if (is.null(nd)) NA_real_ else as.numeric(nd),
+               dtype = if (is.null(h)) NA_character_ else h$dtype,
+               block_x = if (is.null(h)) NA_integer_ else as.integer(h$block[1]),
+               block_y = if (is.null(h)) NA_integer_ else as.integer(h$block[2]),
+               compression = if (is.null(h)) NA_character_ else h$compression,
+               predictor = if (is.null(h)) NA_character_ else h$predictor,
+               lon_centre = lon_centre(f))
   })
   do.call(rbind, rows)
 }
@@ -88,28 +132,55 @@ src_window <- function(xy_src, sgt, src_ncol, src_nrow, pad) {
 
 # ---- engine choice ----------------------------------------------------------
 
-# "bytes":  same CRS, same pixel size, integer pixel offset, and the window
-#           falls on whole source blocks: chunks are fetched and decoded as is.
-# "window": same grid, not on blocks: a plain windowed read, no resampling.
-# "warp":   everything else.
-choose_engine <- function(dst_crs, cgt, ncol, nrow, src, block = 512L, tol = 1e-9) {
-  if (!gdalraster::srs_is_same(dst_crs, src$src_crs)) return(list(engine = "warp"))
+# Same grid, possibly in a different CRS spelling: if the two CRSs are the
+# same projection up to a false easting/northing (UTM 60N with negative
+# northings, as HLS uses, against UTM 60S), the target origin moved into the
+# source CRS lands on a source pixel corner. The test is done by moving the
+# chunk's corners, not by comparing CRS strings.
+same_grid_offset <- function(dst_crs, cgt, ncol, nrow, src, tol = 1e-6) {
   sgt <- c(src$sgt1, src$sgt2, src$sgt3, src$sgt4, src$sgt5, src$sgt6)
-  if (any(abs(cgt[c(2, 3, 5, 6)] - sgt[c(2, 3, 5, 6)]) > tol)) return(list(engine = "warp"))
-  ox <- (cgt[1] - sgt[1]) / sgt[2]; oy <- (cgt[4] - sgt[4]) / sgt[6]
-  if (abs(ox - round(ox)) > 1e-6 || abs(oy - round(oy)) > 1e-6) return(list(engine = "warp"))
-  ox <- round(ox); oy <- round(oy)
-  onblocks <- ox %% block == 0 && oy %% block == 0 &&
-    (ncol %% block == 0 || ox + ncol >= src$src_ncol) &&
-    (nrow %% block == 0 || oy + nrow >= src$src_nrow)
-  list(engine = if (onblocks) "bytes" else "window", ox = ox, oy = oy)
+  if (any(abs(cgt[c(3, 5)]) > 0) || any(abs(sgt[c(3, 5)]) > 0)) return(NULL)
+  same <- gdalraster::srs_is_same(dst_crs, src$src_crs)
+  if (!same) {
+    # corners and an interior point moved into the source CRS must differ
+    # from the target by one constant shift, i.e. a pure offset
+    xy <- rbind(c(cgt[1], cgt[4]), c(cgt[1] + ncol * cgt[2], cgt[4] + nrow * cgt[6]),
+                c(cgt[1] + ncol * cgt[2] / 2, cgt[4]))
+    s <- suppressWarnings(gdalraster::transform_xy(xy, dst_crs, src$src_crs))
+    if (any(!is.finite(s))) return(NULL)
+    d <- s - xy
+    if (max(abs(sweep(d, 2, d[1, ]))) > 1e-3) return(NULL)
+    o <- c(cgt[1] + d[1, 1], cgt[4] + d[1, 2])
+  } else {
+    o <- c(cgt[1], cgt[4])
+  }
+  if (abs(cgt[2] - sgt[2]) > 1e-9 || abs(cgt[6] - sgt[6]) > 1e-9) return(NULL)
+  ox <- (o[1] - sgt[1]) / sgt[2]; oy <- (o[2] - sgt[4]) / sgt[6]
+  if (abs(ox - round(ox)) > tol || abs(oy - round(oy)) > tol) return(NULL)
+  c(round(ox), round(oy))
+}
+
+# "bytes":  same grid (see above), window on whole source blocks, and an
+#           encoding the R decoder handles (DEFLATE, no predictor, 16-bit).
+# "window": same grid otherwise: a plain windowed read, no resampling.
+# "warp":   everything else.
+choose_engine <- function(dst_crs, cgt, ncol, nrow, src) {
+  o <- same_grid_offset(dst_crs, cgt, ncol, nrow, src)
+  if (is.null(o)) return(list(engine = "warp"))
+  bx <- src$block_x; by <- src$block_y
+  decodable <- isTRUE(src$compression == "DEFLATE") && is.na(src$predictor) &&
+    isTRUE(src$dtype %in% c("UInt16", "Int16"))
+  onblocks <- !is.na(bx) && o[1] %% bx == 0 && o[2] %% by == 0 &&
+    (ncol %% bx == 0 || o[1] + ncol >= src$src_ncol) &&
+    (nrow %% by == 0 || o[2] + nrow >= src$src_nrow)
+  list(engine = if (onblocks && decodable) "bytes" else "window", ox = o[1], oy = o[2])
 }
 
 # ---- the plan ---------------------------------------------------------------
 
 #' Build the plan table. pad is the resampling kernel's reach in source
 #' pixels (1 for nearest, 2 for bilinear/cubic).
-geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L, block = 512L) {
+geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L) {
   ch <- geobox_chunks(gbox, chunk)
   pop$group <- solar_day(pop$datetime, pop$lon_centre)
   pop$fuse_order <- ave(seq_len(nrow(pop)), pop$group, FUN = seq_along)
@@ -123,18 +194,22 @@ geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L, block = 51
       xy <- suppressWarnings(gdalraster::transform_xy(pts, gbox$crs, src$src_crs))
       w <- src_window(xy, sgt, src$src_ncol, src$src_nrow, pad)
       if (is.null(w)) next
-      e <- choose_engine(gbox$crs, cgt, ch$ncol[k], ch$nrow[k], src, block)
+      e <- choose_engine(gbox$crs, cgt, ch$ncol[k], ch$nrow[k], src)
       if (e$engine != "warp") {          # exact window, no pad needed
-        w <- c(e$ox, e$oy, min(ch$ncol[k], src$src_ncol - e$ox), min(ch$nrow[k], src$src_nrow - e$oy))
-        if (w[3] <= 0 || w[4] <= 0) next
-      }
+        x0 <- max(0, e$ox); y0 <- max(0, e$oy)
+        x1 <- min(src$src_ncol, e$ox + ch$ncol[k]); y1 <- min(src$src_nrow, e$oy + ch$nrow[k])
+        if (x1 <= x0 || y1 <= y0) next
+        w <- c(x0, y0, x1 - x0, y1 - y0)
+        dx <- x0 - e$ox; dy <- y0 - e$oy  # where the window lands in the chunk
+      } else { dx <- NA; dy <- NA }
       out[[length(out) + 1L]] <- data.frame(
         chunk = ch$chunk[k], dst_xoff = ch$xoff[k], dst_yoff = ch$yoff[k],
         dst_ncol = ch$ncol[k], dst_nrow = ch$nrow[k],
         group = src$group, fuse_order = src$fuse_order, item = src$item,
         asset = src$asset, href = src$href, src_crs = src$src_crs,
         engine = e$engine, src_xoff = w[1], src_yoff = w[2], src_xsize = w[3], src_ysize = w[4],
-        nodata = src$nodata)
+        in_chunk_x = dx, in_chunk_y = dy,
+        nodata = src$nodata, dtype = src$dtype, block_x = src$block_x, block_y = src$block_y)
     }
   }
   p <- do.call(rbind, out)
@@ -147,70 +222,79 @@ geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L, block = 51
 # them as BLOCK_OFFSET_x_y / BLOCK_SIZE_x_y). Here they are read from GDAL
 # metadata for brevity; in the real thing they are a byte-ref table
 # (tabularberg refs_* rows, a kerchunk Parquet, a get-refs harvest) and GDAL
-# is not involved at read time. DEFLATE, no predictor, uint16 only.
-read_bytes_window <- function(href, xoff, yoff, xsize, ysize, block = 512L) {
-  ds <- new(gdalraster::GDALRaster, href); on.exit(ds$close())
-  out <- matrix(0L, ysize, xsize)
-  for (bj in seq(yoff %/% block, (yoff + ysize - 1) %/% block)) {
-    for (bi in seq(xoff %/% block, (xoff + xsize - 1) %/% block)) {
+# is not involved at read time. The bytes are fetched with VSIFile, so local
+# paths and /vsicurl/ both work. DEFLATE, no predictor, 16-bit integers.
+read_bytes_window <- function(r) {
+  bx <- r$block_x; by <- r$block_y
+  signed <- identical(r$dtype, "Int16")
+  ds <- new(gdalraster::GDALRaster, r$href); on.exit(ds$close())
+  f <- new(gdalraster::VSIFile, r$href, "r"); on.exit(f$close(), add = TRUE)
+  out <- matrix(NA_real_, r$src_ysize, r$src_xsize)
+  for (bj in seq(r$src_yoff %/% by, (r$src_yoff + r$src_ysize - 1) %/% by)) {
+    for (bi in seq(r$src_xoff %/% bx, (r$src_xoff + r$src_xsize - 1) %/% bx)) {
       off <- as.numeric(ds$getMetadataItem(1, sprintf("BLOCK_OFFSET_%d_%d", bi, bj), "TIFF"))
       sz <- as.numeric(ds$getMetadataItem(1, sprintf("BLOCK_SIZE_%d_%d", bi, bj), "TIFF"))
-      con <- file(href, "rb"); seek(con, off); raw <- readBin(con, "raw", sz); close(con)
-      v <- readBin(memDecompress(raw, type = "gzip"), "integer", n = block * block,
-                   size = 2, signed = FALSE, endian = "little")
-      m <- matrix(v, block, block, byrow = TRUE)
-      r <- (bj * block - yoff) + seq_len(block); c <- (bi * block - xoff) + seq_len(block)
-      keep_r <- r >= 1 & r <= ysize; keep_c <- c >= 1 & c <= xsize
-      out[r[keep_r], c[keep_c]] <- m[keep_r, keep_c]
+      if (!is.finite(off) || !is.finite(sz) || sz == 0) next   # sparse block: nodata
+      f$seek(off, gdalraster::SEEK_SET); raw <- f$read(sz)
+      v <- readBin(memDecompress(raw, type = "gzip"), "integer", n = bx * by,
+                   size = 2, signed = signed, endian = "little")
+      m <- matrix(as.numeric(v), by, bx, byrow = TRUE)
+      rr <- (bj * by - r$src_yoff) + seq_len(by); cc <- (bi * bx - r$src_xoff) + seq_len(bx)
+      kr <- rr >= 1 & rr <= r$src_ysize; kc <- cc >= 1 & cc <= r$src_xsize
+      out[rr[kr], cc[kc]] <- m[kr, kc]
     }
   }
+  if (!is.na(r$nodata)) out[out == r$nodata] <- NA
   out
 }
 
 # Warp engine: the plan's source window becomes a VRT (gdal_translate
 # -srcwin), so the plan, not the warper's own boundary walk, decides which
-# source pixels are in play. Rows are painted in reverse fuse order, so with
-# nodata honoured the first valid source wins, as odc-stac's default fuser.
+# source pixels are in play. Rows are taken in fuse order and the first valid
+# value wins, as odc-stac's default fuser.
 execute_chunk <- function(rows, gbox, resampling = "near", warp_args = character()) {
   r1 <- rows[1, ]
   cgt <- chunk_gt(gbox, r1$dst_xoff, r1$dst_yoff)
-  acc <- matrix(0L, r1$dst_nrow, r1$dst_ncol)
+  acc <- matrix(NA_real_, r1$dst_nrow, r1$dst_ncol)
   rows <- rows[order(rows$fuse_order), ]
   for (s in seq_len(nrow(rows))) {
     r <- rows[s, ]
+    dtype <- if (is.na(r$dtype)) "Float64" else r$dtype
     if (r$engine == "warp") {
       vrt <- sprintf("/vsimem/src_%s_%s.vrt", r$item, r$chunk)
       gdalraster::translate(r$href, vrt, c("-of", "VRT", "-srcwin", r$src_xoff, r$src_yoff,
                                            r$src_xsize, r$src_ysize), quiet = TRUE)
-      dst <- gdalraster::create("MEM", "", r$dst_ncol, r$dst_nrow, 1, "UInt16", return_obj = TRUE)
+      nd <- if (is.na(r$nodata)) 0 else r$nodata
+      dst <- gdalraster::create("MEM", "", r$dst_ncol, r$dst_nrow, 1, dtype, return_obj = TRUE)
       dst$setGeoTransform(cgt); dst$setProjection(gdalraster::srs_to_wkt(gbox$crs))
-      dst$setNoDataValue(1, 0); dst$fillRaster(1, 0, 0)
-      gdalraster::warp(vrt, dst, "", cl_arg = c("-r", resampling, "-srcnodata", r$nodata,
-                                                 "-dstnodata", 0, warp_args), quiet = TRUE)
+      dst$setNoDataValue(1, nd); dst$fillRaster(1, nd, 0)
+      gdalraster::warp(vrt, dst, "", cl_arg = c("-r", resampling, "-srcnodata", nd,
+                                                 "-dstnodata", nd, warp_args), quiet = TRUE)
       m <- matrix(dst$read(1, 0, 0, r$dst_ncol, r$dst_nrow, r$dst_ncol, r$dst_nrow),
-                  r$dst_nrow, byrow = TRUE)
-      m[is.na(m)] <- 0L                # gdalraster reads nodata as NA
+                  r$dst_nrow, byrow = TRUE)            # gdalraster reads nodata as NA
       dst$close(); gdalraster::vsi_unlink(vrt)
-    } else if (r$engine == "bytes") {
-      m <- read_bytes_window(r$href, r$src_xoff, r$src_yoff, r$src_xsize, r$src_ysize)
-      m <- m[seq_len(r$dst_nrow), seq_len(r$dst_ncol), drop = FALSE]
     } else {
-      ds <- new(gdalraster::GDALRaster, r$href)
-      m <- matrix(ds$read(1, r$src_xoff, r$src_yoff, r$src_xsize, r$src_ysize,
-                          r$src_xsize, r$src_ysize), r$src_ysize, byrow = TRUE)
-      m[is.na(m)] <- 0L
-      ds$close()
+      if (r$engine == "bytes") {
+        w <- read_bytes_window(r)
+      } else {
+        ds <- new(gdalraster::GDALRaster, r$href)
+        w <- matrix(ds$read(1, r$src_xoff, r$src_yoff, r$src_xsize, r$src_ysize,
+                            r$src_xsize, r$src_ysize), r$src_ysize, byrow = TRUE)
+        ds$close()
+      }
+      m <- matrix(NA_real_, r$dst_nrow, r$dst_ncol)
+      m[r$in_chunk_y + seq_len(nrow(w)), r$in_chunk_x + seq_len(ncol(w))] <- w
     }
-    fill <- acc == 0 & m != 0          # first valid wins
+    fill <- is.na(acc) & !is.na(m)    # first valid wins
     acc[fill] <- m[fill]
   }
   acc
 }
 
-#' Run a plan: returns an array [y, x, group] on the GeoBox.
+#' Run a plan: returns an array [y, x, group] on the GeoBox, NA for nodata.
 execute_plan <- function(plan, gbox, resampling = "near", warp_args = character()) {
   groups <- sort(unique(plan$group))
-  out <- array(0L, c(gbox$dim[2], gbox$dim[1], length(groups)),
+  out <- array(NA_real_, c(gbox$dim[2], gbox$dim[1], length(groups)),
                dimnames = list(NULL, NULL, as.character(groups)))
   for (g in seq_along(groups)) {
     pg <- plan[plan$group == groups[g], ]
@@ -223,4 +307,39 @@ execute_plan <- function(plan, gbox, resampling = "near", warp_args = character(
     }
   }
   out
+}
+
+# ---- shared helpers for the run scripts -------------------------------------
+
+#' Read a multi-band file as [y, x, band], NA for nodata.
+read_stack <- function(f) {
+  ds <- new(gdalraster::GDALRaster, f); on.exit(ds$close())
+  nx <- ds$getRasterXSize(); ny <- ds$getRasterYSize(); nb <- ds$getRasterCount()
+  simplify2array(lapply(seq_len(nb), function(b) matrix(ds$read(b, 0, 0, nx, ny, nx, ny), ny, byrow = TRUE)))
+}
+
+#' GDAL's own answer: one gdalwarp per group over the whole GeoBox, sources
+#' in reverse fuse order (gdalwarp paints later sources over earlier ones).
+gdal_whole <- function(pop, gbox, resampling, warp_args = character()) {
+  pop$group <- solar_day(pop$datetime, pop$lon_centre)
+  gs <- sort(unique(pop$group))
+  dtype <- if (is.na(pop$dtype[1])) "Float64" else pop$dtype[1]
+  nd <- if (is.na(pop$nodata[1])) 0 else pop$nodata[1]
+  simplify2array(lapply(gs, function(g) {
+    s <- rev(pop$href[pop$group == g])
+    dst <- gdalraster::create("MEM", "", gbox$dim[1], gbox$dim[2], 1, dtype, return_obj = TRUE)
+    dst$setGeoTransform(gbox$gt); dst$setProjection(gdalraster::srs_to_wkt(gbox$crs))
+    dst$setNoDataValue(1, nd); dst$fillRaster(1, nd, 0)
+    gdalraster::warp(s, dst, "", cl_arg = c("-r", resampling, "-srcnodata", nd, "-dstnodata", nd, warp_args), quiet = TRUE)
+    m <- matrix(dst$read(1, 0, 0, gbox$dim[1], gbox$dim[2], gbox$dim[1], gbox$dim[2]),
+                gbox$dim[2], byrow = TRUE)
+    dst$close(); m
+  }))
+}
+
+compare <- function(a, b) {
+  va <- !is.na(a); vb <- !is.na(b); both <- va & vb
+  d <- abs(a[both] - b[both])
+  data.frame(valid_a = sum(va), valid_b = sum(vb), only_a = sum(va & !vb), only_b = sum(vb & !va),
+             equal = mean(d == 0), max_abs_diff = if (length(d)) max(d) else NA)
 }

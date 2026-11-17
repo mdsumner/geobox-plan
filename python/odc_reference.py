@@ -17,6 +17,9 @@ OUT = os.path.join(ROOT, "ref")
 os.makedirs(OUT, exist_ok=True)
 
 fc = json.load(open(os.path.join(ROOT, "fixtures", "items.json")))
+for f in fc["features"]:  # hrefs are relative to the repo root
+    for a in f["assets"].values():
+        a["href"] = os.path.join(ROOT, a["href"])
 items = [pystac.Item.from_dict(f) for f in fc["features"]]
 
 WGS84GRID30 = GeoboxTiles(

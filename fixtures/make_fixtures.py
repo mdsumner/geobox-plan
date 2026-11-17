@@ -74,7 +74,7 @@ def scene(name, epsg, lon0, lon1, date, offset):
         "id": name, "bbox": bbox, "geometry": geom,
         "properties": {"datetime": f"{date}T22:10:00Z", "proj:epsg": epsg,
                        "proj:shape": [nrow, ncol], "proj:transform": list(tr)[:6]},
-        "assets": {"red": {"href": path, "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "assets": {"red": {"href": os.path.relpath(path, os.path.dirname(HERE)), "type": "image/tiff; application=geotiff; profile=cloud-optimized",
                            "roles": ["data"], "raster:bands": [{"nodata": 0, "data_type": "uint16"}]}},
         "links": [],
     }

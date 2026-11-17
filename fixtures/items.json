@@ -59,7 +59,7 @@
    },
    "assets": {
     "red": {
-     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/A.tif",
+     "href": "fixtures/data/A.tif",
      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
      "roles": [
       "data"
@@ -158,7 +158,7 @@
    },
    "assets": {
     "red": {
-     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/B.tif",
+     "href": "fixtures/data/B.tif",
      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
      "roles": [
       "data"
@@ -257,7 +257,7 @@
    },
    "assets": {
     "red": {
-     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/C.tif",
+     "href": "fixtures/data/C.tif",
      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
      "roles": [
       "data"

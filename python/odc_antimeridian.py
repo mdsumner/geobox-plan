@@ -10,6 +10,9 @@ from affine import Affine
 from odc.geo.geobox import GeoBox
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 fc = json.load(open(os.path.join(ROOT, "fixtures", "items.json")))
+for f in fc["features"]:  # hrefs are relative to the repo root
+    for a in f["assets"].values():
+        a["href"] = os.path.join(ROOT, a["href"])
 C = [pystac.Item.from_dict(f) for f in fc["features"] if f["id"] == "C"]
 print("odc.stac", odc.stac.__version__, "GDAL", rasterio.__gdal_version__)
 for x0 in (178.5, 178.2):
