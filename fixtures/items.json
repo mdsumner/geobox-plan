@@ -1,0 +1,276 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "stac_version": "1.0.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+   ],
+   "id": "A",
+   "bbox": [
+    178.3,
+    -16.7,
+    179.6,
+    -14.8
+   ],
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       178.3,
+       -16.7
+      ],
+      [
+       179.6,
+       -16.7
+      ],
+      [
+       179.6,
+       -14.8
+      ],
+      [
+       178.3,
+       -14.8
+      ],
+      [
+       178.3,
+       -16.7
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-28T22:10:00Z",
+    "proj:epsg": 32760,
+    "proj:shape": [
+     7053,
+     4710
+    ],
+    "proj:transform": [
+     30.0,
+     0.0,
+     638580.0,
+     0.0,
+     -30.0,
+     8363400.0
+    ]
+   },
+   "assets": {
+    "red": {
+     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/A.tif",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "roles": [
+      "data"
+     ],
+     "raster:bands": [
+      {
+       "nodata": 0,
+       "data_type": "uint16"
+      }
+     ]
+    }
+   },
+   "links": []
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.0.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+   ],
+   "id": "B",
+   "bbox": [
+    179.3,
+    -16.7,
+    -179.8,
+    -14.8
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        179.3,
+        -16.7
+       ],
+       [
+        180,
+        -16.7
+       ],
+       [
+        180,
+        -14.8
+       ],
+       [
+        179.3,
+        -14.8
+       ],
+       [
+        179.3,
+        -16.7
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -180,
+        -16.7
+       ],
+       [
+        -179.8,
+        -16.7
+       ],
+       [
+        -179.8,
+        -14.8
+       ],
+       [
+        -180,
+        -14.8
+       ],
+       [
+        -180,
+        -16.7
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-28T22:10:00Z",
+    "proj:epsg": 32701,
+    "proj:shape": [
+     7066,
+     3326
+    ],
+    "proj:transform": [
+     30.0,
+     0.0,
+     101610.0,
+     0.0,
+     -30.0,
+     8361930.0
+    ]
+   },
+   "assets": {
+    "red": {
+     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/B.tif",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "roles": [
+      "data"
+     ],
+     "raster:bands": [
+      {
+       "nodata": 0,
+       "data_type": "uint16"
+      }
+     ]
+    }
+   },
+   "links": []
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.0.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+   ],
+   "id": "C",
+   "bbox": [
+    178.4,
+    -16.7,
+    -179.9,
+    -14.8
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        178.4,
+        -16.7
+       ],
+       [
+        180,
+        -16.7
+       ],
+       [
+        180,
+        -14.8
+       ],
+       [
+        178.4,
+        -14.8
+       ],
+       [
+        178.4,
+        -16.7
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -180,
+        -16.7
+       ],
+       [
+        -179.9,
+        -16.7
+       ],
+       [
+        -179.9,
+        -14.8
+       ],
+       [
+        -180,
+        -14.8
+       ],
+       [
+        -180,
+        -16.7
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-29T22:10:00Z",
+    "proj:epsg": 32760,
+    "proj:shape": [
+     7077,
+     6149
+    ],
+    "proj:transform": [
+     30.0,
+     0.0,
+     649260.0,
+     0.0,
+     -30.0,
+     8363340.0
+    ]
+   },
+   "assets": {
+    "red": {
+     "href": "/perm_storage/home/mdsumner/Git/geobox-plan/fixtures/data/C.tif",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "roles": [
+      "data"
+     ],
+     "raster:bands": [
+      {
+       "nodata": 0,
+       "data_type": "uint16"
+      }
+     ]
+    }
+   },
+   "links": []
+  }
+ ]
+}
