@@ -1,0 +1,165 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "stac_version": "1.0.0",
+   "stac_extensions": [],
+   "id": "HLS.L30.T60KYG.2024363T220615.v2.0",
+   "bbox": [
+    178.4,
+    -16.7,
+    -179.9,
+    -14.8
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        178.4,
+        -16.7
+       ],
+       [
+        180,
+        -16.7
+       ],
+       [
+        180,
+        -14.8
+       ],
+       [
+        178.4,
+        -14.8
+       ],
+       [
+        178.4,
+        -16.7
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -180,
+        -16.7
+       ],
+       [
+        -179.9,
+        -16.7
+       ],
+       [
+        -179.9,
+        -14.8
+       ],
+       [
+        -180,
+        -14.8
+       ],
+       [
+        -180,
+        -16.7
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-29T22:10:00.123Z",
+    "eo:cloud_cover": 88
+   },
+   "assets": {
+    "B04": {
+     "href": "hls/mock/HLS.L30.T60KYG.2024363T220615.v2.0.B04.tif",
+     "type": "image/tiff; application=geotiff",
+     "roles": [
+      "data"
+     ]
+    }
+   },
+   "links": [],
+   "collection": "HLSL30.v2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.0.0",
+   "stac_extensions": [],
+   "id": "HLS.L30.T01KAB.2024363T220615.v2.0",
+   "bbox": [
+    179.3,
+    -16.7,
+    -179.8,
+    -14.8
+   ],
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        179.3,
+        -16.7
+       ],
+       [
+        180,
+        -16.7
+       ],
+       [
+        180,
+        -14.8
+       ],
+       [
+        179.3,
+        -14.8
+       ],
+       [
+        179.3,
+        -16.7
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -180,
+        -16.7
+       ],
+       [
+        -179.8,
+        -16.7
+       ],
+       [
+        -179.8,
+        -14.8
+       ],
+       [
+        -180,
+        -14.8
+       ],
+       [
+        -180,
+        -16.7
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "datetime": "2024-12-28T22:10:00.123Z",
+    "eo:cloud_cover": 88
+   },
+   "assets": {
+    "B04": {
+     "href": "hls/mock/HLS.L30.T01KAB.2024363T220615.v2.0.B04.tif",
+     "type": "image/tiff; application=geotiff",
+     "roles": [
+      "data"
+     ]
+    }
+   },
+   "links": [],
+   "collection": "HLSL30.v2.0"
+  }
+ ]
+}

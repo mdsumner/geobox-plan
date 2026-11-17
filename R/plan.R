@@ -54,13 +54,19 @@ lon_centre <- function(f) {
   atan2(mean(sin(r)), mean(cos(r))) * 180 / pi
 }
 
+# "EPSG:nnnn" when the WKT is a known code, else the WKT itself.
+short_crs <- function(wkt) {
+  e <- tryCatch(gdalraster::srs_find_epsg(wkt), error = function(e) NA)
+  if (length(e) && !is.na(e[1]) && nzchar(e[1])) as.character(e[1]) else wkt
+}
+
 # Grid and encoding from the file header: used when an item has no proj:*.
 # Costs one header read per asset.
 header_grid <- function(href) {
   ds <- new(gdalraster::GDALRaster, href); on.exit(ds$close())
   ims <- ds$getMetadata(0, "IMAGE_STRUCTURE")
   val <- function(k) { x <- sub(paste0("^", k, "="), "", grep(paste0("^", k, "="), ims, value = TRUE)); if (length(x)) x else NA_character_ }
-  list(crs = ds$getProjection(), gt = ds$getGeoTransform(),
+  list(crs = short_crs(ds$getProjection()), gt = ds$getGeoTransform(),
        ncol = ds$getRasterXSize(), nrow = ds$getRasterYSize(),
        nodata = ds$getNoDataValue(1), dtype = ds$getDataTypeName(1),
        block = ds$getBlockSize(1), compression = val("COMPRESSION"), predictor = val("PREDICTOR"))
@@ -86,7 +92,8 @@ population <- function(features, asset = "red", header = TRUE, href_fn = identit
     }
     nd <- a[["raster:bands"]][[1]]$nodata
     if (is.null(nd) && !is.null(h)) nd <- h$nodata
-    data.frame(item = f$id, datetime = as.POSIXct(sub("Z$", "", p$datetime), "%Y-%m-%dT%H:%M:%OS", tz = "UTC"),
+    dt <- if (!is.null(p$datetime)) p$datetime else p$start_datetime
+    data.frame(item = f$id, datetime = as.POSIXct(sub("Z$", "", dt), "%Y-%m-%dT%H:%M:%OS", tz = "UTC"),
                asset = asset, href = href, src_crs = crs, grid_from = grid_from,
                sgt1 = gt[1], sgt2 = gt[2], sgt3 = gt[3], sgt4 = gt[4], sgt5 = gt[5], sgt6 = gt[6],
                src_ncol = as.integer(ncol), src_nrow = as.integer(nrow),
@@ -213,7 +220,11 @@ geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L) {
     }
   }
   p <- do.call(rbind, out)
-  p[order(p$group, p$chunk, p$fuse_order), ]
+  p <- p[order(p$group, p$chunk, p$fuse_order), ]
+  # every group in the population, including ones with no rows here, so an
+  # empty time step comes back as all nodata (as odc-stac returns it)
+  attr(p, "groups") <- sort(unique(pop$group))
+  p
 }
 
 # ---- execution --------------------------------------------------------------
@@ -293,11 +304,13 @@ execute_chunk <- function(rows, gbox, resampling = "near", warp_args = character
 
 #' Run a plan: returns an array [y, x, group] on the GeoBox, NA for nodata.
 execute_plan <- function(plan, gbox, resampling = "near", warp_args = character()) {
-  groups <- sort(unique(plan$group))
+  groups <- attr(plan, "groups")
+  if (is.null(groups)) groups <- sort(unique(plan$group))
   out <- array(NA_real_, c(gbox$dim[2], gbox$dim[1], length(groups)),
                dimnames = list(NULL, NULL, as.character(groups)))
   for (g in seq_along(groups)) {
     pg <- plan[plan$group == groups[g], ]
+    if (!nrow(pg)) next
     for (ck in unique(pg$chunk)) {
       rows <- pg[pg$chunk == ck, ]
       m <- execute_chunk(rows, gbox, resampling, warp_args)
