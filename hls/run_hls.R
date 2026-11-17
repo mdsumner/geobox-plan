@@ -5,6 +5,9 @@
 #   HLS_ITEMS=... HLS_OUT=... Rscript hls/run_hls.R
 suppressMessages(library(gdalraster))
 source("R/plan.R")
+# LP DAAC returns the odd 502/503: let GDAL retry rather than fail the run
+if (!nzchar(Sys.getenv("GDAL_HTTP_MAX_RETRY"))) Sys.setenv(GDAL_HTTP_MAX_RETRY = "5")
+if (!nzchar(Sys.getenv("GDAL_HTTP_RETRY_DELAY"))) Sys.setenv(GDAL_HTTP_RETRY_DELAY = "2")
 
 items_file <- Sys.getenv("HLS_ITEMS", "hls/items.json")
 out <- Sys.getenv("HLS_OUT", "ref_hls")

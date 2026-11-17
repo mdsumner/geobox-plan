@@ -17,6 +17,10 @@ from affine import Affine
 from odc.geo.geobox import GeoBox, GeoboxTiles
 import odc.stac
 
+# LP DAAC returns the odd 502/503: let GDAL retry rather than fail the run
+os.environ.setdefault("GDAL_HTTP_MAX_RETRY", "5")
+os.environ.setdefault("GDAL_HTTP_RETRY_DELAY", "2")
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ITEMS = os.environ.get("HLS_ITEMS", os.path.join(ROOT, "hls", "items.json"))
 OUT = os.environ.get("HLS_OUT", os.path.join(ROOT, "ref_hls"))
