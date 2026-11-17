@@ -1,0 +1,3905 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T60LYH.2024363T220615.v2.0",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       178.8720481,
+       -16.3609252
+      ],
+      [
+       179.8992248,
+       -16.3492904
+      ],
+      [
+       179.8850891,
+       -15.3579115
+      ],
+      [
+       178.8629116,
+       -15.3688059
+      ],
+      [
+       178.8720481,
+       -16.3609252
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    178.8629116,
+    -16.3609252,
+    179.8992248,
+    -15.3579115
+   ],
+   "properties": {
+    "datetime": "2024-12-28T22:06:15.475000Z",
+    "eo:cloud_cover": 88,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-28T22:06:15.475Z",
+    "end_datetime": "2024-12-28T22:06:15.475Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T60LYH.2024363T220615.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3351494143-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3351494143-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T60LYH.2024363T220615.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B11.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B02.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B06.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B07.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B10.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B05.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.SAA.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.VZA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B03.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.Fmask.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B04.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.SZA.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.VAA.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B01.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B09.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T60LYH.2024363T220615.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B11.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B02.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B06.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B07.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B10.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B05.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.SAA.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.VZA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B03.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B04.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.SZA.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.VAA.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B01.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024363T220615.v2.0/HLS.L30.T60LYH.2024363T220615.v2.0.B09.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3351494143-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3351494143-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T60KXG.2024363T220615.v2.0",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       178.9668018,
+       -16.7617774
+      ],
+      [
+       178.9632517,
+       -16.2717261
+      ],
+      [
+       178.2132952,
+       -16.2773549
+      ],
+      [
+       178.1423874,
+       -16.5860537
+      ],
+      [
+       178.9668018,
+       -16.7617774
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    178.1423874,
+    -16.7617774,
+    178.9668018,
+    -16.2717261
+   ],
+   "properties": {
+    "datetime": "2024-12-28T22:06:15.475000Z",
+    "eo:cloud_cover": 93,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-28T22:06:15.475Z",
+    "end_datetime": "2024-12-28T22:06:15.475Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T60KXG.2024363T220615.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149157-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149157-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T60KXG.2024363T220615.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B04.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B11.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B05.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B03.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.SZA.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B06.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B01.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B02.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.VAA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.SAA.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.VZA.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.Fmask.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B07.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B10.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B09.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T60KXG.2024363T220615.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B04.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B11.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B05.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B03.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.SZA.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B06.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B01.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B02.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.VAA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.SAA.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.VZA.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B07.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B10.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KXG.2024363T220615.v2.0/HLS.L30.T60KXG.2024363T220615.v2.0.B09.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149157-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3356149157-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T01KAB.2024363T220615.v2.0",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -180,
+        -16.2849559
+       ],
+       [
+        -179.9998978,
+        -16.2844925
+       ],
+       [
+        -179.9947527,
+        -16.2596435
+       ],
+       [
+        -180,
+        -16.25956
+       ],
+       [
+        -180,
+        -16.2849559
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        180,
+        -16.25956
+       ],
+       [
+        179.2586253,
+        -16.2477629
+       ],
+       [
+        179.9998218,
+        -16.2844885
+       ],
+       [
+        179.8541503,
+        -16.9465009
+       ],
+       [
+        180,
+        -16.2849559
+       ],
+       [
+        180,
+        -16.25956
+       ]
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    180,
+    -16.9465009,
+    179.9998218,
+    -16.2477629
+   ],
+   "properties": {
+    "datetime": "2024-12-28T22:06:15.475000Z",
+    "eo:cloud_cover": 97,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-28T22:06:15.475Z",
+    "end_datetime": "2024-12-28T22:06:15.475Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T01KAB.2024363T220615.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149739-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149739-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T01KAB.2024363T220615.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B01.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B09.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B11.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B03.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.VAA.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B05.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B10.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.SZA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.SAA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B04.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B06.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.Fmask.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B02.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.VZA.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B07.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T01KAB.2024363T220615.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B01.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B09.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B11.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B03.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.VAA.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B05.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B10.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.SZA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.SAA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B04.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B06.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B02.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.VZA.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024363T220615.v2.0/HLS.L30.T01KAB.2024363T220615.v2.0.B07.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356149739-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3356149739-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T60KYG.2024363T220615.v2.0",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       179.8533416,
+       -16.946467
+      ],
+      [
+       179.9047296,
+       -16.7173741
+      ],
+      [
+       179.897925,
+       -16.2609914
+      ],
+      [
+       178.871208,
+       -16.27256
+      ],
+      [
+       178.8757335,
+       -16.7422959
+      ],
+      [
+       179.8533416,
+       -16.946467
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    178.871208,
+    -16.946467,
+    179.9047296,
+    -16.2609914
+   ],
+   "properties": {
+    "datetime": "2024-12-28T22:06:15.475000Z",
+    "eo:cloud_cover": 97,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-28T22:06:15.475Z",
+    "end_datetime": "2024-12-28T22:06:15.475Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T60KYG.2024363T220615.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356150408-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356150408-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T60KYG.2024363T220615.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B02.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.Fmask.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B07.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.VZA.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B09.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B10.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B01.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.SAA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.SZA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B06.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B04.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.VAA.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B03.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B11.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B05.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T60KYG.2024363T220615.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B02.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B07.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.VZA.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B09.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B10.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B01.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.SAA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.SZA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B06.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B04.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.VAA.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B03.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B11.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024363T220615.v2.0/HLS.L30.T60KYG.2024363T220615.v2.0.B05.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356150408-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3356150408-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T01LAC.2024363T220615.v2.0",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -180,
+        -16.284958
+       ],
+       [
+        -179.9998978,
+        -16.2844925
+       ],
+       [
+        -179.9851182,
+        -15.3565935
+       ],
+       [
+        -180,
+        -15.3563694
+       ],
+       [
+        -180,
+        -16.284958
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        180,
+        -15.3563694
+       ],
+       [
+        179.2751785,
+        -15.3454537
+       ],
+       [
+        179.9352476,
+        -15.3612009
+       ],
+       [
+        179.9856752,
+        -15.3878959
+       ],
+       [
+        179.9998218,
+        -16.2844885
+       ],
+       [
+        179.9862329,
+        -16.3476826
+       ],
+       [
+        180,
+        -16.284958
+       ],
+       [
+        180,
+        -15.3563694
+       ]
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    180,
+    -16.3476826,
+    179.9998218,
+    -15.3454537
+   ],
+   "properties": {
+    "datetime": "2024-12-28T22:06:15.475000Z",
+    "eo:cloud_cover": 94,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-28T22:06:15.475Z",
+    "end_datetime": "2024-12-28T22:06:15.475Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T01LAC.2024363T220615.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356156170-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356156170-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T01LAC.2024363T220615.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.SZA.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B03.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B11.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.VZA.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B09.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.Fmask.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B01.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.VAA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B05.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B04.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.SAA.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B10.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B06.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B07.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B02.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T01LAC.2024363T220615.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.SZA.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B03.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B11.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.VZA.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B09.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B01.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.VAA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B05.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B04.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.SAA.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B10.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B06.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B07.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024363T220615.v2.0/HLS.L30.T01LAC.2024363T220615.v2.0.B02.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3356156170-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3356156170-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T60LYH.2024364T220011.v2.0",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       179.7328589,
+       -16.3515147
+      ],
+      [
+       179.8992248,
+       -16.3492904
+      ],
+      [
+       179.8894079,
+       -15.6683379
+      ],
+      [
+       179.76509,
+       -16.208581
+      ],
+      [
+       179.7328589,
+       -16.3515147
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    179.7328589,
+    -16.3515147,
+    179.8992248,
+    -15.6683379
+   ],
+   "properties": {
+    "datetime": "2024-12-29T22:00:11.813000Z",
+    "eo:cloud_cover": 99,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-29T22:00:11.813Z",
+    "end_datetime": "2024-12-29T22:00:11.813Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T60LYH.2024364T220011.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353122090-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353122090-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T60LYH.2024364T220011.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.VAA.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B10.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B03.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B09.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B05.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B01.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B06.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B11.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.VZA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B04.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B02.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.SAA.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.SZA.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B07.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.Fmask.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T60LYH.2024364T220011.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.VAA.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B10.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B03.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B09.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B05.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B01.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B06.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B11.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.VZA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B04.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B02.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.SAA.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.SZA.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.B07.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60LYH.2024364T220011.v2.0/HLS.L30.T60LYH.2024364T220011.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353122090-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3353122090-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T60KYG.2024364T220011.v2.0",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       179.5231063,
+       -17.2575496
+      ],
+      [
+       179.9129808,
+       -17.2522742
+      ],
+      [
+       179.897925,
+       -16.2609914
+      ],
+      [
+       179.7526743,
+       -16.2634723
+      ],
+      [
+       179.5231063,
+       -17.2575496
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    179.5231063,
+    -17.2575496,
+    179.9129808,
+    -16.2609914
+   ],
+   "properties": {
+    "datetime": "2024-12-29T22:00:11.813000Z",
+    "eo:cloud_cover": 70,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-29T22:00:11.813Z",
+    "end_datetime": "2024-12-29T22:00:35.742Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T60KYG.2024364T220011.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353123223-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353123223-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T60KYG.2024364T220011.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B03.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B09.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.VZA.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B07.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B11.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B06.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B05.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B02.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.SZA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B04.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.VAA.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B01.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.Fmask.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B10.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.SAA.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T60KYG.2024364T220011.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B03.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B09.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.VZA.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B07.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B11.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B06.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B05.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B02.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.SZA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B04.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.VAA.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B01.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.B10.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T60KYG.2024364T220011.v2.0/HLS.L30.T60KYG.2024364T220011.v2.0.SAA.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3353123223-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3353123223-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T01LAC.2024364T220011.v2.0",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -180,
+        -16.3477006
+       ],
+       [
+        -179.9667169,
+        -16.3481733
+       ],
+       [
+        -179.9918152,
+        -16.2878578
+       ],
+       [
+        -179.7034308,
+        -15.3601902
+       ],
+       [
+        -180,
+        -15.3563674
+       ],
+       [
+        -180,
+        -16.3477006
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        180,
+        -15.3563674
+       ],
+       [
+        179.9607306,
+        -15.3558613
+       ],
+       [
+        179.9174017,
+        -16.2822191
+       ],
+       [
+        179.7343799,
+        -16.3439286
+       ],
+       [
+        180,
+        -16.3477006
+       ],
+       [
+        180,
+        -15.3563674
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -179.7166792,
+        -16.351724
+       ],
+       [
+        -179.9667169,
+        -16.3481733
+       ],
+       [
+        -179.9666427,
+        -16.3483516
+       ],
+       [
+        -179.7166792,
+        -16.351724
+       ]
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    180,
+    -16.351724,
+    179.9607306,
+    -15.3558613
+   ],
+   "properties": {
+    "datetime": "2024-12-29T22:00:11.813000Z",
+    "eo:cloud_cover": 94,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-29T22:00:11.813Z",
+    "end_datetime": "2024-12-29T22:00:11.813Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T01LAC.2024364T220011.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357305889-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357305889-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T01LAC.2024364T220011.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.SZA.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B06.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.VZA.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B09.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B02.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B03.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.Fmask.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.SAA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B05.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B01.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B07.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B11.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B10.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.VAA.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B04.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T01LAC.2024364T220011.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.SZA.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B06.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.VZA.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B09.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B02.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B03.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.SAA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B05.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B01.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B07.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B11.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B10.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.VAA.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01LAC.2024364T220011.v2.0/HLS.L30.T01LAC.2024364T220011.v2.0.B04.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357305889-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3357305889-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  },
+  {
+   "type": "Feature",
+   "stac_version": "1.1.0",
+   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+   ],
+   "id": "HLS.L30.T01KAB.2024364T220011.v2.0",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -180,
+        -17.2507247
+       ],
+       [
+        -179.7295718,
+        -17.2548501
+       ],
+       [
+        -179.9995191,
+        -16.259576
+       ],
+       [
+        -180,
+        -16.259876
+       ],
+       [
+        -180,
+        -17.2507247
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        180,
+        -16.259876
+       ],
+       [
+        179.9996316,
+        -16.2601058
+       ],
+       [
+        179.9116719,
+        -17.0768496
+       ],
+       [
+        179.6005667,
+        -17.2446313
+       ],
+       [
+        180,
+        -17.2507247
+       ],
+       [
+        180,
+        -16.259876
+       ]
+      ]
+     ]
+    ]
+   },
+   "bbox": [
+    180,
+    -17.2548501,
+    179.9996316,
+    -16.259576
+   ],
+   "properties": {
+    "datetime": "2024-12-29T22:00:11.813000Z",
+    "eo:cloud_cover": 85,
+    "storage:schemes": {
+     "aws": {
+      "type": "aws-s3",
+      "platform": "https://{bucket}.s3.{region}.amazonaws.com",
+      "bucket": "lp-prod-protected",
+      "region": "us-west-2"
+     }
+    },
+    "start_datetime": "2024-12-29T22:00:11.813Z",
+    "end_datetime": "2024-12-29T22:00:35.742Z"
+   },
+   "links": [
+    {
+     "rel": "self",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/items/HLS.L30.T01KAB.2024364T220011.v2.0",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "parent",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "collection",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD/collections/HLSL30_2.0/",
+     "type": "application/geo+json"
+    },
+    {
+     "rel": "root",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json",
+     "title": "LPCLOUD STAC Catalog"
+    },
+    {
+     "rel": "provider",
+     "href": "https://cmr.earthdata.nasa.gov/stac/LPCLOUD",
+     "type": "application/json"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357309785-LPCLOUD.json",
+     "type": "application/json",
+     "title": "CMR JSON metadata for item"
+    },
+    {
+     "rel": "via",
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357309785-LPCLOUD.umm_json",
+     "type": "application/vnd.nasa.cmr.umm+json",
+     "title": "CMR UMM_JSON metadata for item"
+    }
+   ],
+   "assets": {
+    "browse": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.jpg",
+     "type": "image/jpeg",
+     "title": "Download HLS.L30.T01KAB.2024364T220011.v2.0.jpg",
+     "roles": [
+      "browse"
+     ]
+    },
+    "thumbnail_0": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [0]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.jpg",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "thumbnail_1": {
+     "href": "s3://lp-prod-public/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.jpg",
+     "title": "Thumbnail [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "roles": [
+      "thumbnail"
+     ]
+    },
+    "SAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.SAA.tif",
+     "title": "Direct Download [0]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.SAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B03": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B03.tif",
+     "title": "Direct Download [1]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B03.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B09": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B09.tif",
+     "title": "Direct Download [2]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B09.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B11": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B11.tif",
+     "title": "Direct Download [3]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B11.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B06": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B06.tif",
+     "title": "Direct Download [4]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B06.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "Fmask": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.Fmask.tif",
+     "title": "Direct Download [5]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.Fmask.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B02": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B02.tif",
+     "title": "Direct Download [6]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B02.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "SZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.SZA.tif",
+     "title": "Direct Download [7]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.SZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VZA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.VZA.tif",
+     "title": "Direct Download [8]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.VZA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B10": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B10.tif",
+     "title": "Direct Download [9]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B10.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B05": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B05.tif",
+     "title": "Direct Download [10]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B05.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "VAA": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.VAA.tif",
+     "title": "Direct Download [11]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.VAA.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B07": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B07.tif",
+     "title": "Direct Download [12]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B07.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B01": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B01.tif",
+     "title": "Direct Download [13]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B01.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "B04": {
+     "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B04.tif",
+     "title": "Direct Download [14]",
+     "description": "Download HLS.L30.T01KAB.2024364T220011.v2.0.B04.tif",
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.SAA.tif",
+     "title": "S3 Direct Download [0]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B03": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B03.tif",
+     "title": "S3 Direct Download [1]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B09": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B09.tif",
+     "title": "S3 Direct Download [2]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B11": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B11.tif",
+     "title": "S3 Direct Download [3]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B06": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B06.tif",
+     "title": "S3 Direct Download [4]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_Fmask": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.Fmask.tif",
+     "title": "S3 Direct Download [5]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B02": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B02.tif",
+     "title": "S3 Direct Download [6]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_SZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.SZA.tif",
+     "title": "S3 Direct Download [7]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VZA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.VZA.tif",
+     "title": "S3 Direct Download [8]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B10": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B10.tif",
+     "title": "S3 Direct Download [9]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B05": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B05.tif",
+     "title": "S3 Direct Download [10]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_VAA": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.VAA.tif",
+     "title": "S3 Direct Download [11]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B07": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B07.tif",
+     "title": "S3 Direct Download [12]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B01": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B01.tif",
+     "title": "S3 Direct Download [13]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "s3_B04": {
+     "href": "s3://lp-prod-protected/HLSL30.020/HLS.L30.T01KAB.2024364T220011.v2.0/HLS.L30.T01KAB.2024364T220011.v2.0.B04.tif",
+     "title": "S3 Direct Download [14]",
+     "description": "This link provides direct download access via S3 to the granule",
+     "storage:refs": [
+      "aws"
+     ],
+     "roles": [
+      "data"
+     ]
+    },
+    "metadata": {
+     "href": "https://cmr.earthdata.nasa.gov/search/concepts/G3357309785-LPCLOUD.xml",
+     "type": "application/xml",
+     "title": "CMR XML metadata for G3357309785-LPCLOUD",
+     "roles": [
+      "metadata"
+     ]
+    }
+   },
+   "collection": "HLSL30_2.0"
+  }
+ ]
+}
