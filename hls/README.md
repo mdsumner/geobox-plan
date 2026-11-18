@@ -103,3 +103,33 @@ What it showed, before the fixes in the patch after it:
 - **CMR-STAC bboxes for granules on 180 are degenerate**, for example
   `[180, -16.95, 179.9998, -16.25]`. `population()` takes its centre from the
   footprint vertices, so it is not affected.
+
+## Second real run (2026-11-18, after the predictor and pass fixes)
+
+| | R plan | whole gdalwarp | odc-stac | odc-stac, one chunk |
+|---|---|---|---|---|
+| day 1 valid (default transformer) | 15,168,892 | 15,168,945 | 14,453,383 | 13,883,499 |
+| day 2 valid (default transformer) | 2,156,789 | 2,156,790 | 1,386,711 | 934,763 |
+| day 1 valid (`-et 0` both sides) | 15,168,786 | 15,168,786 | | |
+| day 2 valid (`-et 0` both sides) | 2,156,770 | 2,156,770 | | |
+
+- **With `-et 0` the chunked R plan equals one whole-tile gdalwarp:** the
+  same valid pixels and every value equal, for nearest and for bilinear, on
+  both days. With GDAL's default transformer they agree on about 97% of
+  pixels for nearest and about 30% for bilinear. The 1 to 3% of pixels
+  that differ come from where the approximate transformer interpolates.
+- **The byte engine runs on real HLS.** In the aligned cases the zone 60
+  granules are read as raw tiles and decoded in R (DEFLATE plus predictor
+  2), and the zone 1 granules that reach the window are warped. The result
+  is identical to odc-stac and gdalwarp (1,030,298 valid pixels), in the
+  EPSG:32660 spelling and in EPSG:32760.
+- **Pass grouping:** day 2 now includes T01LAC (centred at -179.96 E) with
+  the rest of its pass. Day 2 has 2,156,789 valid pixels, against 1,199,655
+  when the granule was misgrouped.
+- **odc-stac against the R plan:** odc-stac is short by about 0.72 M pixels
+  on day 1 and 0.77 M on day 2, all near 180, and by more with one chunk.
+  Where both have data they agree on 62% (nearest) and 34% (bilinear) of
+  pixels. The open question is how much of that comes from odc-stac's own
+  reprojection and how much from a different paint order where adjacent
+  granules overlap. A load of one granule at a time would separate the
+  two.
