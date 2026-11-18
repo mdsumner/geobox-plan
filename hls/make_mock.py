@@ -32,7 +32,7 @@ for sid, tile, epsg_n, date in [("C", "T60KYG", 32660, "2024363T220615"),
     path = os.path.join(OUT, f"{iid}.B04.tif")
     with rasterio.open(path, "w", driver="COG", width=v.shape[1], height=v.shape[0], count=1,
                        dtype="int16", crs=f"EPSG:{epsg_n}", transform=tn, nodata=-9999,
-                       compress="DEFLATE", blocksize=256) as d:
+                       compress="DEFLATE", predictor=2, blocksize=256) as d:
         d.write(v, 1)
     g = copy.deepcopy(f)
     g["id"] = iid

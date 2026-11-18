@@ -111,6 +111,24 @@ population <- function(features, asset = "red", header = TRUE, href_fn = identit
 #' odc-stac's "solar_day": UTC time shifted by longitude / 15 hours.
 solar_day <- function(datetime, lon) as.Date(datetime + lon / 15 * 3600, tz = "UTC")
 
+#' Group a population by acquisition pass, labelled by solar day.
+#'
+#' Per-item solar_day splits a pass that straddles the antimeridian: a
+#' granule centred at -179.96 shifts by -12 h and one at +179.98 by +12 h, so
+#' one overpass lands on two days. Items are first joined into passes (start
+#' times within `tol` seconds of the previous item, in time order), and each
+#' pass gets one solar day from the circular mean longitude of its members.
+pass_groups <- function(datetime, lon, tol = 600) {
+  o <- order(datetime)
+  t <- as.numeric(datetime[o])
+  pass <- integer(length(t)); pass[o] <- cumsum(c(TRUE, diff(t) > tol))
+  r <- lon * pi / 180
+  plon <- tapply(seq_along(lon), pass, function(i) atan2(mean(sin(r[i])), mean(cos(r[i]))) * 180 / pi)
+  ptime <- tapply(seq_along(lon), pass, function(i) min(datetime[i]))
+  ptime <- as.POSIXct(ptime, origin = "1970-01-01", tz = "UTC")
+  solar_day(ptime, plon)[as.character(pass)]
+}
+
 # ---- footprint: target into source, never source into target ---------------
 
 # Pixel-corner sample of a chunk: dense edges plus an interior lattice. The
@@ -168,14 +186,14 @@ same_grid_offset <- function(dst_crs, cgt, ncol, nrow, src, tol = 1e-6) {
 }
 
 # "bytes":  same grid (see above), window on whole source blocks, and an
-#           encoding the R decoder handles (DEFLATE, no predictor, 16-bit).
+#           encoding the R decoder handles (DEFLATE, predictor 1 or 2, 16-bit).
 # "window": same grid otherwise: a plain windowed read, no resampling.
 # "warp":   everything else.
 choose_engine <- function(dst_crs, cgt, ncol, nrow, src) {
   o <- same_grid_offset(dst_crs, cgt, ncol, nrow, src)
   if (is.null(o)) return(list(engine = "warp"))
   bx <- src$block_x; by <- src$block_y
-  decodable <- isTRUE(src$compression == "DEFLATE") && is.na(src$predictor) &&
+  decodable <- isTRUE(src$compression == "DEFLATE") && (is.na(src$predictor) || src$predictor %in% c("1", "2")) &&
     isTRUE(src$dtype %in% c("UInt16", "Int16"))
   onblocks <- !is.na(bx) && o[1] %% bx == 0 && o[2] %% by == 0 &&
     (ncol %% bx == 0 || o[1] + ncol >= src$src_ncol) &&
@@ -189,7 +207,7 @@ choose_engine <- function(dst_crs, cgt, ncol, nrow, src) {
 #' pixels (1 for nearest, 2 for bilinear/cubic).
 geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L) {
   ch <- geobox_chunks(gbox, chunk)
-  pop$group <- solar_day(pop$datetime, pop$lon_centre)
+  pop$group <- pass_groups(pop$datetime, pop$lon_centre)
   pop$fuse_order <- ave(seq_len(nrow(pop)), pop$group, FUN = seq_along)
   out <- list()
   for (k in seq_len(nrow(ch))) {
@@ -216,7 +234,8 @@ geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L) {
         asset = src$asset, href = src$href, src_crs = src$src_crs,
         engine = e$engine, src_xoff = w[1], src_yoff = w[2], src_xsize = w[3], src_ysize = w[4],
         in_chunk_x = dx, in_chunk_y = dy,
-        nodata = src$nodata, dtype = src$dtype, block_x = src$block_x, block_y = src$block_y)
+        nodata = src$nodata, dtype = src$dtype, block_x = src$block_x, block_y = src$block_y,
+        compression = src$compression, predictor = src$predictor)
     }
   }
   p <- do.call(rbind, out)
@@ -234,7 +253,8 @@ geobox_plan <- function(pop, gbox, chunk = c(2048L, 2048L), pad = 2L) {
 # metadata for brevity; in the real thing they are a byte-ref table
 # (tabularberg refs_* rows, a kerchunk Parquet, a get-refs harvest) and GDAL
 # is not involved at read time. The bytes are fetched with VSIFile, so local
-# paths and /vsicurl/ both work. DEFLATE, no predictor, 16-bit integers.
+# paths and /vsicurl/ both work. DEFLATE, predictor none or 2 (horizontal
+# differencing, which HLS uses), 16-bit integers.
 read_bytes_window <- function(r) {
   bx <- r$block_x; by <- r$block_y
   signed <- identical(r$dtype, "Int16")
@@ -248,8 +268,12 @@ read_bytes_window <- function(r) {
       if (!is.finite(off) || !is.finite(sz) || sz == 0) next   # sparse block: nodata
       f$seek(off, gdalraster::SEEK_SET); raw <- f$read(sz)
       v <- readBin(memDecompress(raw, type = "gzip"), "integer", n = bx * by,
-                   size = 2, signed = signed, endian = "little")
+                   size = 2, signed = FALSE, endian = "little")
       m <- matrix(as.numeric(v), by, bx, byrow = TRUE)
+      if (identical(r$predictor, "2")) {   # horizontal differencing, per row, mod 2^16
+        m <- t(apply(m, 1, cumsum)) %% 65536
+      }
+      if (signed) m[m > 32767] <- m[m > 32767] - 65536
       rr <- (bj * by - r$src_yoff) + seq_len(by); cc <- (bi * bx - r$src_xoff) + seq_len(bx)
       kr <- rr >= 1 & rr <= r$src_ysize; kc <- cc >= 1 & cc <= r$src_xsize
       out[rr[kr], cc[kc]] <- m[kr, kc]
@@ -334,7 +358,7 @@ read_stack <- function(f) {
 #' GDAL's own answer: one gdalwarp per group over the whole GeoBox, sources
 #' in reverse fuse order (gdalwarp paints later sources over earlier ones).
 gdal_whole <- function(pop, gbox, resampling, warp_args = character()) {
-  pop$group <- solar_day(pop$datetime, pop$lon_centre)
+  pop$group <- pass_groups(pop$datetime, pop$lon_centre)
   gs <- sort(unique(pop$group))
   dtype <- if (is.na(pop$dtype[1])) "Float64" else pop$dtype[1]
   nd <- if (is.na(pop$nodata[1])) 0 else pop$nodata[1]

@@ -18,9 +18,16 @@ vsi <- function(h) if (grepl("^https?://", h)) paste0("/vsicurl/", h) else h
 t0 <- proc.time()[["elapsed"]]
 pop <- population(fc$features, asset = "B04", header = TRUE, href_fn = vsi)
 cat(sprintf("population: %d items, headers read in %.1f s\n", nrow(pop), proc.time()[["elapsed"]] - t0))
-pop$solar_day <- solar_day(pop$datetime, pop$lon_centre)
+pop$item_solar_day <- solar_day(pop$datetime, pop$lon_centre)
+pop$group <- pass_groups(pop$datetime, pop$lon_centre)
 print(pop[, c("item", "src_crs", "grid_from", "dtype", "nodata", "block_x", "compression",
-              "predictor", "lon_centre", "solar_day")], row.names = FALSE)
+              "predictor", "lon_centre", "item_solar_day", "group")], row.names = FALSE)
+
+# warp settings for both the plan and the whole-tile gdalwarp, e.g.
+#   HLS_WARP_ARGS="-et 0" Rscript hls/run_hls.R
+warp_args <- strsplit(Sys.getenv("HLS_WARP_ARGS", ""), " +")[[1]]
+warp_args <- warp_args[nzchar(warp_args)]
+cat("warp args:", if (length(warp_args)) paste(warp_args, collapse = " ") else "(GDAL defaults)", "\n")
 
 # GeoBoxes: exactly the grids odc-stac used (from its meta.json)
 gb_from_meta <- function(m) {
@@ -44,13 +51,13 @@ for (case in cases) {
   for (rs in c("nearest", "bilinear")) {
     gr <- if (rs == "nearest") "near" else "bilinear"
     t0 <- proc.time()[["elapsed"]]
-    r <- execute_plan(plan, gbox, gr)
+    r <- execute_plan(plan, gbox, gr, warp_args)
     t_exec <- proc.time()[["elapsed"]] - t0
     refs <- list(`odc-stac` = sprintf("%s_%s.tif", case, rs),
                  `odc-stac one chunk` = sprintf("%s_%s_onechunk.tif", case, rs))
     refs <- refs[file.exists(file.path(out, unlist(refs)))]
     others <- lapply(refs, function(f) read_stack(file.path(out, f)))
-    others[["gdalwarp whole"]] <- gdal_whole(pop, gbox, gr)
+    others[["gdalwarp whole"]] <- gdal_whole(pop, gbox, gr, warp_args)
     groups <- dimnames(r)[[3]]
     for (nm in names(others)) {
       o <- others[[nm]]
@@ -69,4 +76,6 @@ for (case in cases) {
 }
 res <- do.call(rbind, results)
 print(res, row.names = FALSE)
-write.csv(res, file.path(out, "comparison.csv"), row.names = FALSE)
+res$warp_args <- paste(warp_args, collapse = " ")
+tag <- if (length(warp_args)) paste0("_", gsub("[^A-Za-z0-9]+", "", paste(warp_args, collapse = ""))) else ""
+write.csv(res, file.path(out, paste0("comparison", tag, ".csv")), row.names = FALSE)

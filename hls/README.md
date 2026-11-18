@@ -49,8 +49,8 @@ pixels near 180.
 ## Dry run without Earthdata
 
 `hls/make_mock.py` turns fixture scenes C and B into HLS-shaped granules
-(int16, nodata -9999, 256 tiles, UTM north spelling, no `proj:*` on the
-items):
+(int16, nodata -9999, DEFLATE with predictor 2, 256 tiles, UTM north
+spelling, no `proj:*` on the items):
 
 ```sh
 python3 fixtures/make_fixtures.py
@@ -69,4 +69,37 @@ On the mock (GDAL 3.8.4 for R, 3.12.2 under odc-stac):
   and to gdalwarp. The day with no granule in the window comes back as an
   all-nodata layer on every side.
 
-The real run has not been done yet.
+With `HLS_WARP_ARGS="-et 0"` (exact transformer on both sides) the `warp`
+case is identical to gdalwarp for nearest, and the byte engine decodes the
+predictor-2 tiles to the same values GDAL reads.
+
+## First real run (2026-11-18)
+
+Nine granules (five on 2024-12-28 22:06Z, four on 2024-12-29 22:00Z) in
+UTM 60N and 1N. All are DEFLATE with predictor 2 and 256 x 256 tiles.
+
+What it showed, before the fixes in the patch after it:
+
+- **The byte engine was not used.** Predictor 2 was not decoded then, so the
+  aligned cases fell back to `window` reads. These were identical to
+  odc-stac and gdalwarp (1,030,298 valid pixels).
+- **One pass was split across two days.** T01LAC on 2024-12-29 centres at
+  -179.96 E while the rest of its pass centres at +179.7 to +179.98, so a
+  per-item solar day put it a day early. Groups are now formed per pass
+  (`pass_groups()`): items whose start times fall within 10 minutes are one
+  pass, labelled by the solar day of the pass's circular-mean longitude.
+  odc-stac kept that granule with its pass.
+- **Coverage, R plan vs whole gdalwarp:** 15,191,348 vs 15,191,386 on day
+  1, and 1,199,655 vs 1,199,671 on day 2, with the default transformer.
+- **Values with the default transformer:** they agree on only 96.9%
+  (nearest) and 28% (bilinear) of pixels. The smooth fixture field hid
+  this: a neighbouring pixel there often has the same integer value, so the
+  fixtures understated how often chunked and whole-tile warps pick
+  differently. With `-et 0` the two should agree, as they do on the mock;
+  this is to be confirmed on the real data.
+- **odc-stac depends on chunking:** 14,453,383 valid pixels on day 1 with no
+  chunks against 13,883,499 with one chunk, and 1,386,711 against 934,763 on
+  day 2.
+- **CMR-STAC bboxes for granules on 180 are degenerate**, for example
+  `[180, -16.95, 179.9998, -16.25]`. `population()` takes its centre from the
+  footprint vertices, so it is not affected.
